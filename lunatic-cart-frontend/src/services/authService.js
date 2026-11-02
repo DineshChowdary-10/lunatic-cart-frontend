@@ -1,6 +1,5 @@
 
 import API_BASE_URL from "../apiConfig";
-
 const AUTH_URL = `${API_BASE_URL}/auth`;
 
 async function sendAuthRequest(endpoint, userData) {

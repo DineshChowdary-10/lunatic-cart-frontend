@@ -1,5 +1,4 @@
-import API_BASE_URL from ".services./apiConfig";
-
+import API_BASE_URL from "../apiConfig";
 const AUTH_URL = `${API_BASE_URL}/cart`;
 function getAuthHeaders() {
   const token = localStorage.getItem("token");

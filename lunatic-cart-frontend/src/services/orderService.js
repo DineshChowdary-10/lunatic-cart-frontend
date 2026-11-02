@@ -1,5 +1,4 @@
 import API_BASE_URL from "../apiConfig";
-
 const ORDERS_URL = `${API_BASE_URL}/orders`;
 
 export async function getMyOrders() {
