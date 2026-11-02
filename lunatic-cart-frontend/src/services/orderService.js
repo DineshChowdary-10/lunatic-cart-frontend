@@ -1,4 +1,4 @@
-import API_BASE_URL from "./apiConfig";
+import API_BASE_URL from "../apiConfig";
 
 const ORDERS_URL = `${API_BASE_URL}/orders`;
 

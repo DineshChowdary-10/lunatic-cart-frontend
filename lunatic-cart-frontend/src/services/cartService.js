@@ -1,4 +1,4 @@
-import API_BASE_URL from "./apiConfig";
+import API_BASE_URL from ".services./apiConfig";
 
 const AUTH_URL = `${API_BASE_URL}/cart`;
 function getAuthHeaders() {
