@@ -1,5 +1,6 @@
+import API_BASE_URL from "./apiConfig";
 
-const API_BASE_URL = "http://localhost:8080/api/orders";
+const ORDERS_URL = `${API_BASE_URL}/orders`;
 
 export async function getMyOrders() {
   const token = localStorage.getItem("token");

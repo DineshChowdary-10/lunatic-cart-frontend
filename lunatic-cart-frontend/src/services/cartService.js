@@ -1,6 +1,6 @@
+import API_BASE_URL from "./apiConfig";
 
-const API_BASE_URL = "http://localhost:8080/api/cart";
-
+const AUTH_URL = `${API_BASE_URL}/cart`;
 function getAuthHeaders() {
   const token = localStorage.getItem("token");
 

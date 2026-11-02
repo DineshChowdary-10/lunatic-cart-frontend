@@ -1,5 +1,7 @@
 
-const API_BASE_URL = "http://localhost:8080/api/auth";
+import API_BASE_URL from "./apiConfig";
+
+const AUTH_URL = `${API_BASE_URL}/auth`;
 
 async function sendAuthRequest(endpoint, userData) {
   const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
