@@ -1,5 +1,8 @@
+
 import API_BASE_URL from "../apiConfig";
-const AUTH_URL = `${API_BASE_URL}/cart`;
+
+const CART_URL = `${API_BASE_URL}/cart`;
+
 function getAuthHeaders() {
   const token = localStorage.getItem("token");
 
@@ -24,6 +27,7 @@ async function sendCartRequest(url, options = {}) {
 
   if (!response.ok) {
     const message = await response.text();
+
     throw new Error(
       message || `Cart request failed: ${response.status}`
     );
@@ -43,40 +47,40 @@ async function sendCartRequest(url, options = {}) {
 }
 
 export function getCart() {
-  return sendCartRequest(API_BASE_URL);
+  return sendCartRequest(CART_URL);
 }
 
 export function addCartItem(productId, quantity = 1) {
   return sendCartRequest(
-    `${API_BASE_URL}/items/${productId}?quantity=${quantity}`,
+    `${CART_URL}/items/${productId}?quantity=${quantity}`,
     { method: "POST" }
   );
 }
 
 export function updateCartItem(productId, quantity) {
   return sendCartRequest(
-    `${API_BASE_URL}/items/${productId}?quantity=${quantity}`,
+    `${CART_URL}/items/${productId}?quantity=${quantity}`,
     { method: "PUT" }
   );
 }
 
 export function removeCartItem(productId) {
   return sendCartRequest(
-    `${API_BASE_URL}/items/${productId}`,
+    `${CART_URL}/items/${productId}`,
     { method: "DELETE" }
   );
 }
 
 export function clearCart() {
-  return sendCartRequest(API_BASE_URL, { method: "DELETE" });
+  return sendCartRequest(CART_URL, { method: "DELETE" });
 }
 
 export function getCartTotal() {
-  return sendCartRequest(`${API_BASE_URL}/total`);
+  return sendCartRequest(`${CART_URL}/total`);
 }
 
 export function checkout() {
-  return sendCartRequest(`${API_BASE_URL}/checkout`, {
+  return sendCartRequest(`${CART_URL}/checkout`, {
     method: "POST",
   });
 }
