@@ -1,9 +1,10 @@
 
 import API_BASE_URL from "../apiConfig";
+
 const AUTH_URL = `${API_BASE_URL}/auth`;
 
 async function sendAuthRequest(endpoint, userData) {
-  const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+  const response = await fetch(`${AUTH_URL}/${endpoint}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
